@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 1.引入外部bean -->
+    <bean id="dept" class="com.percy.iocxml.ditest.Dept">
+        <property name="dname" value="安保部"></property>
+    </bean>
+
+
+    <bean id="emp" class="com.percy.iocxml.ditest.Emp">
+        <!-- 對象類型屬性 -->
+        <property name="dept"  ref="dept"></property>
+        <!-- 普通值注入 -->
+        <property name="ename" value="percy"></property>
+        <property name="age" value="33"></property>
+    </bean>
+
+    <!-- 2.內部入bean注入 -->
+    <bean id="emp2" class="com.percy.iocxml.ditest.Emp">
+
+        <!-- 普通值注入 -->
+        <property name="ename" value="peter"></property>
+        <property name="age" value="40"></property>
+
+        <!-- 內部bean -->
+        <property name="dept" >
+            <bean id="dept2" class="com.percy.iocxml.ditest.Dept">
+                <property name="dname" value="開發部"></property>
+            </bean>
+        </property>
+    </bean>
+
+
+    <!-- 3.級別賦值 -->
+    <bean id="dept3" class="com.percy.iocxml.ditest.Dept">
+        <property name="dname" value="財務部"></property>
+    </bean>
+
+
+    <bean id="emp3" class="com.percy.iocxml.ditest.Emp">
+        <!-- 對象類型屬性 -->
+        <property name="dept"  ref="dept"></property>
+        <property name="dept.dname"  value="測試部"></property>
+        <!-- 普通值注入 -->
+        <property name="ename" value="amy"></property>
+        <property name="age" value="30"></property>
+    </bean>
+
+</beans>

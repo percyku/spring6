@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- id: Bean 的唯一名稱，class: 完整類名 -->
+    <bean id="user" class="com.percy.iocxml.life.User" scope="singleton" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="name" value="percy"></property>
+    </bean>
+
+
+
+    <bean id="myBeanPost" class="com.percy.iocxml.life.MyBeanPost" >
+    </bean>
+
+
+</beans>

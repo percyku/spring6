@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 數組類型屬性 -->
+    <bean id="dept" class="com.percy.iocxml.ditest.Dept">
+        <property name="dname" value="安保部"></property>
+    </bean>
+
+
+    <bean id="emp" class="com.percy.iocxml.ditest.Emp">
+        <!-- 對象類型屬性 -->
+        <property name="dept"  ref="dept"></property>
+        <!-- 普通值注入 -->
+        <property name="ename" value="percy"></property>
+        <property name="age" value="33"></property>
+        
+        <property name="loves" >
+            <array>
+                <value>吃飯</value>
+                <value>睡覺</value>
+            </array>
+        </property>
+    </bean>
+
+  
+
+
+
+</beans>

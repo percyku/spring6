@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 數組類型屬性 -->
+    <bean id="student" class="com.percy.iocxml.dimap.Student">
+        <property name="sId" value="1"></property>
+        <property name="sName" value="percy"></property>
+        <property name="teacherMap">
+            <map>
+                <entry>
+                    <key><value>1001</value></key>
+                    <ref bean="teacher1"></ref>
+                </entry>
+                <entry>
+                    <key><value>1002</value></key>
+                    <ref bean="teacher2"></ref>
+                </entry>
+            </map>
+        </property>
+
+    </bean>
+
+
+
+    <bean id="teacher1" class="com.percy.iocxml.dimap.Teacher">
+        <property name="tId" value="100"></property>
+        <property name="tName" value="西門講師"></property>
+    </bean>
+
+    <bean id="teacher2" class="com.percy.iocxml.dimap.Teacher">
+        <property name="tId" value="200"></property>
+        <property name="tName" value="東門講師"></property>
+    </bean>
+
+
+
+
+
+
+
+
+
+</beans>

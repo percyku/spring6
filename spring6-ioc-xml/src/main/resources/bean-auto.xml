@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 根據類型自動裝配 -->
+<!--    <bean id="userController" class=" controller.auto.iocxml.spring6.com.percy.spring6.UserController" autowire="byType">-->
+
+<!--    </bean>-->
+<!--    <bean id="userService" class=" service.auto.iocxml.spring6.com.percy.spring6.UserServiceImpl" autowire="byType">-->
+
+<!--    </bean>-->
+<!--    <bean id="userDao" class=" dao.auto.iocxml.spring6.com.percy.spring6.UserDaoImpl">-->
+
+<!--    </bean>-->
+
+    <!-- 根據名稱自動裝配 -->
+    <bean id="userController" class=" com.percy.iocxml.auto.controller.UserController" autowire="byName">
+
+    </bean>
+    <bean id="userService" class=" com.percy.iocxml.auto.service.UserServiceImpl" autowire="byName">
+
+    </bean>
+    <bean id="userDaoImpl" class=" com.percy.iocxml.auto.dao.UserDaoImpl">
+
+    </bean>
+
+
+
+
+</beans>
